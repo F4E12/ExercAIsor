@@ -1,58 +1,45 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Select } from "@/components/ui/select";
+"use client";
+
+import ParticleBackground from "@/components/ui/particles";
+import Link from "next/link";
+import { useCallback } from "react";
+
+import Particles from "react-tsparticles";
+import type { Engine } from "tsparticles-engine";
+import { loadStarsPreset } from "tsparticles-preset-stars";
 
 export default function Home() {
   return (
-    <div className="p-10 max-w-lg mx-auto">
-      {/* Subject Dropdown */}
-      <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-700">
-          Subject
-        </label>
-        <Select>
-          <option value="math">Math</option>
-          <option value="science">Science</option>
-          <option value="history">History</option>
-        </Select>
-      </div>
+    <div>
+      <ParticleBackground />
+      <div className="flex flex-col items-center justify-center min-h-screen bg-black text-background z-10">
+        <h1 className="text-4xl font-bold mb-8 z-20">
+          Welcome to the ExercAIsor
+        </h1>
 
-      {/* Number of Questions Dropdown */}
-      <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-700">
-          Number of Questions
-        </label>
-        <Select>
-          <option value="5">5</option>
-          <option value="10">10</option>
-          <option value="15">15</option>
-        </Select>
-      </div>
+        <div className="grid gap-8">
+          {/* Generate Menu */}
+          <Link href="/generate">
+            <div className="bg-primary text-primary-foreground shadow-md rounded-lg p-6 max-w-sm w-full hover:bg-primary/80 transition transform hover:-translate-y-2 hover:scale-105 duration-300 ease-in-out">
+              <h2 className="text-xl font-semibold mb-2">Generate</h2>
+              <p className="text-secondary-foreground">
+                Generate an exercise for practicing different math problems,
+                customized to your needs.
+              </p>
+            </div>
+          </Link>
 
-      {/* Topic Dropdown */}
-      <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-700">Topic</label>
-        <Select>
-          <option value="algebra">Algebra</option>
-          <option value="geometry">Geometry</option>
-          <option value="calculus">Calculus</option>
-        </Select>
-      </div>
-
-      {/* Generate Button */}
-      <Button className="w-full mb-6">Generate</Button>
-
-      {/* Generated Questions */}
-      <div className="space-y-4">
-        {[1, 2, 3, 4, 5].map((num) => (
-          <div key={num} className="flex items-center space-x-2">
-            <span>{num}.</span>
-            <Input
-              className="flex-grow"
-              placeholder="Generated question goes here..."
-            />
-          </div>
-        ))}
+          {/* Variation Menu */}
+          <Link href="/variation">
+            <div className="bg-accent text-accent-foreground shadow-md rounded-lg p-6 max-w-sm w-full hover:bg-accent/70 transition transform hover:-translate-y-2 hover:scale-105 duration-300 ease-in-out">
+              <h2 className="text-xl font-semibold mb-2">Variation</h2>
+              <p className="text-secondary-foreground">
+                Create a variation of your case, providing new names and numbers
+                to existing scenarios.
+              </p>
+            </div>
+          </Link>
+        </div>
       </div>
     </div>
   );
