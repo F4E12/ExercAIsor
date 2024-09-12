@@ -2,11 +2,6 @@
 
 import ParticleBackground from "@/components/ui/particles";
 import Link from "next/link";
-import { useCallback } from "react";
-
-import Particles from "react-tsparticles";
-import type { Engine } from "tsparticles-engine";
-import { loadStarsPreset } from "tsparticles-preset-stars";
 
 export default function Home() {
   return (

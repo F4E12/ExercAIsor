@@ -1,6 +1,5 @@
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
 import type { Engine } from "tsparticles-engine";
 import { loadStarsPreset } from "tsparticles-preset-stars";
 
@@ -9,15 +8,10 @@ export default function ParticleBackground() {
     await loadStarsPreset(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async (container: any) => {
-    console.log(container);
-  }, []);
-
   return (
     <Particles
       id="tsparticles"
       init={particlesInit}
-      loaded={particlesLoaded}
       options={{
         preset: "stars",
         fpsLimit: 60,
