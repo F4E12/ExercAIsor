@@ -10,11 +10,11 @@ export default function DuplicateCaseUI() {
   const [generatedCases, setGeneratedCases] = useState<string[]>([]);
 
   const handleGenerate = () => {
-    const newCases = generateVariations(inputCase);
+    const newCases = generateVariations();
     setGeneratedCases(newCases);
   };
 
-  const generateVariations = (text: string): string[] => {
+  const generateVariations = (): string[] => {
     // Mock AI Functionality - You can replace this with real AI logic
     return [
       "Dina memiliki 15 jeruk dan Fajar memiliki 12 jeruk, berapakah total jeruk yang mereka miliki bersama?",
