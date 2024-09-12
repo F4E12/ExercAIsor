@@ -8,21 +8,46 @@ import { useState } from "react";
 export default function DuplicateCaseUI() {
   const [inputCase, setInputCase] = useState("");
   const [generatedCases, setGeneratedCases] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleGenerate = () => {
-    const newCases = generateVariations();
-    setGeneratedCases(newCases);
+  const handleGenerate = async () => {
+    setIsLoading(true);
+    setError(null); // Reset error before making the API call
+    try {
+      const newCases = await generateVariations();
+      setGeneratedCases(newCases);
+    } catch (error) {
+      setError("Failed to generate variations. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  const generateVariations = (): string[] => {
-    // Mock AI Functionality - You can replace this with real AI logic
-    return [
-      "Dina memiliki 15 jeruk dan Fajar memiliki 12 jeruk, berapakah total jeruk yang mereka miliki bersama?",
-      "Rina mempunyai 8 mangga dan Sandi mempunyai 7 mangga, berapakah total mangga yang dimiliki oleh keduanya?",
-      "Tono memiliki 6 pisang dan Siti memiliki 5 pisang, berapakah jumlah pisang yang mereka miliki secara keseluruhan?",
-      "Andi memiliki 13 buah anggur dan Nia memiliki 11 buah anggur, berapakah total anggur yang mereka miliki?",
-      "Lina memiliki 20 stroberi dan Kiki memiliki 18 stroberi, berapakah total stroberi yang mereka miliki bersama?",
-    ];
+  const generateVariations = async (): Promise<string[]> => {
+    try {
+      // Call your Flask API to generate variations
+      const numVariations = 5; // You can change the number as per your requirement
+      const response = await fetch(
+        `http://localhost:5000/variation/${numVariations}/${encodeURIComponent(
+          inputCase
+        )}`
+      );
+
+      // Check if the response is OK
+      if (!response.ok) {
+        throw new Error("Failed to fetch variations");
+      }
+
+      // Parse the response JSON
+      const data = await response.json();
+
+      // Return the generated variations from the API response
+      return data.variations;
+    } catch (error) {
+      console.error("Error generating variations:", error);
+      throw error;
+    }
   };
 
   return (
@@ -47,10 +72,14 @@ export default function DuplicateCaseUI() {
       {/* Generate Button */}
       <Button
         onClick={handleGenerate}
+        disabled={isLoading}
         className="w-full mb-6 bg-primary text-primary-foreground hover:bg-primary/80"
       >
-        Generate Variations
+        {isLoading ? "Generating..." : "Generate Variations"}
       </Button>
+
+      {/* Display Error */}
+      {error && <p className="text-red-500 mb-4">{error}</p>}
 
       {/* Generated Cases */}
       <div className="space-y-4">
