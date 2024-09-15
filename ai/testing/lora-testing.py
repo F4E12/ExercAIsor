@@ -50,34 +50,24 @@ gemma_lm.compile(
 )
 
 # Fine-tune the model for 1 epoch (you can adjust the epoch as needed)
-def fine_tune_model(data, epochs=100):
+def fine_tune_model(data, epochs=1):
     gemma_lm.fit(data, epochs=epochs, batch_size=1)
     print("Model fine-tuning complete.")
 
 # Save the trained model
-def save_model(path="fine_tuned_gemma_lm.h5"):
+def save_model(path="fine_tuned_gemma_lm.weights.h5"):
     gemma_lm.save_weights(path)
     print(f"Model saved at {path}.")
 
 # Load the model
-def load_model(path="fine_tuned_gemma_lm.h5"):
+def load_model(path="fine_tuned_gemma_lm.weights.h5"):
     gemma_lm.load_weights(path)
     print(f"Model loaded from {path}.")
 
 # Run fine-tuning and save the model
-if not os.path.exists("fine_tuned_gemma_lm.h5"):
+if not os.path.exists("fine_tuned_gemma_lm.weights.h5"):
     fine_tune_model(data)
     save_model()
 
 # Load the model if already saved
 load_model()
-
-# Function to generate new variations using the fine-tuned model
-def generate_variation(prompt):
-    sampler = keras_nlp.samplers.TopKSampler(k=5, seed=2)
-    gemma_lm.compile(sampler=sampler)
-    print(gemma_lm.generate(prompt, max_length=256))
-
-# Example prompt for generating a new variation
-prompt = "John sells 3 bananas a day, Nina sells 6 bananas a day. How many bananas can John and Nina sell in 3 days?"
-generate_variation(prompt)
