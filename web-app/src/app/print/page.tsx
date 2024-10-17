@@ -3,10 +3,10 @@
 import BackButton from "@/components/ui/backhome";
 import { Button } from "@/components/ui/button";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { useReactToPrint } from "react-to-print";
 
-const PrintPage = () => {
+const PrintContent = () => {
   const searchParams = useSearchParams();
   const cases = searchParams.get("cases");
   const [generatedCases, setGeneratedCases] = useState<string[]>([]);
@@ -70,4 +70,10 @@ const PrintPage = () => {
   );
 };
 
-export default PrintPage;
+export default function PrintPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PrintContent />
+    </Suspense>
+  );
+}
