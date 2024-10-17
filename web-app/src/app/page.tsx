@@ -1,5 +1,6 @@
 "use client";
 
+import Navbar from "@/components/ui/navbar";
 import ParticleBackground from "@/components/ui/particles";
 import Link from "next/link";
 
@@ -7,6 +8,7 @@ export default function Home() {
   return (
     <div>
       <ParticleBackground />
+      <Navbar />
       <div className="flex flex-col items-center justify-center min-h-screen bg-black text-background z-10">
         <h1 className="text-4xl font-bold mb-8 z-20">
           Welcome to the ExercAIsor
