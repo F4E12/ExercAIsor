@@ -43,8 +43,8 @@ export default function Home() {
             ExercAIsor is an AI-powered platform designed to help you create
             custom math problem variations. Using a fine-tuned GEMMA model, you
             can input a simple math problem, and the AI will generate new
-            variations with different numbers and contexts. Whether you're a
-            teacher or a student, ExercAIsor is here to provide endless
+            variations with different numbers and contexts. Whether you&rsquo;re
+            a teacher or a student, ExercAIsor is here to provide endless
             possibilities for math exercises and practice.
           </p>
           <div className="flex justify-center">

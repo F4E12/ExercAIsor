@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="bg-black text-white shadow-md z-20 sticky justify-around w-full p-4">
+    <nav className="bg-black text-white shadow-md z-20 sticky top-0 w-full p-4 border-b-2 border-transparent">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="text-2xl font-bold hover:text-gray-300 transition duration-300">
@@ -26,6 +26,7 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+      <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 animate-glow"></div>
     </nav>
   );
 }

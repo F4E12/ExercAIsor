@@ -1,9 +1,10 @@
 "use client";
 
-import BackButton from "@/components/ui/backhome";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/ui/navbar";
+import ParticleBackground from "@/components/ui/particles";
 import { Textarea } from "@/components/ui/textarea";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function DuplicateCaseUI() {
@@ -11,6 +12,7 @@ export default function DuplicateCaseUI() {
   const [generatedCases, setGeneratedCases] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
 
   // Generate variations by calling the Flask API
   const generateVariations = async (inputCase: string): Promise<string[]> => {
@@ -46,25 +48,36 @@ export default function DuplicateCaseUI() {
       const newCases = await generateVariations(inputCase);
       setGeneratedCases(newCases);
     } catch (error) {
+      setGeneratedCases([
+        "This is a place holder",
+        "This is a place holder",
+        "This is a place holder",
+      ]);
       setError("Failed to generate variations. Please try again.");
     } finally {
       setIsLoading(false);
     }
   };
 
+  const handlePrint = () => {
+    const encodedCases = encodeURIComponent(JSON.stringify(generatedCases));
+    router.push(`/print?cases=${encodedCases}`);
+  };
+
   return (
-    <>
+    <div>
+      <ParticleBackground />
       <Navbar />
-      <div className="p-10 max-w-xl mx-auto bg-background text-foreground">
+      <div className="flex flex-col p-10 max-w-xl mx-auto z-10 text-foreground relative">
         {/* <BackButton /> */}
 
         {/* Input Case */}
         <div className="mb-6">
-          <label className="block text-sm font-medium text-secondary-foreground">
+          <label className="block text-sm font-medium text-background">
             Input Case
           </label>
           <Textarea
-            placeholder="Budi mempunyai 10 apel dan Ayina mempunyai 9 apel, berapakah total apel yang dimiliki oleh keduanya?"
+            placeholder="Input your problem here ..."
             value={inputCase}
             onChange={(e) => setInputCase(e.target.value)}
             className="mt-1 block w-full p-3 bg-card text-card-foreground border border-border"
@@ -88,7 +101,7 @@ export default function DuplicateCaseUI() {
         <div className="space-y-4">
           {generatedCases.length > 0 && (
             <>
-              <h2 className="text-lg font-medium text-secondary-foreground">
+              <h2 className="text-lg font-medium text-primary">
                 Generated Variations:
               </h2>
               {generatedCases.map((generatedCase, index) => (
@@ -102,7 +115,14 @@ export default function DuplicateCaseUI() {
             </>
           )}
         </div>
+        <Button
+          onClick={handlePrint}
+          className="w-full mt-6 bg-accent text-accent-foreground hover:bg-accent/80 z-10"
+          disabled={!(generatedCases.length > 0) || isLoading}
+        >
+          Print to PDF
+        </Button>
       </div>
-    </>
+    </div>
   );
 }

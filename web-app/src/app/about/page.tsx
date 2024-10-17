@@ -94,11 +94,11 @@ export default function About() {
           </div>
 
           <p className="text-lg animate-fade-in">
-            Whether you're a teacher looking to provide extra exercises for your
-            students or a student seeking more practice problems, ExercAIsor is
-            here to assist you in achieving your learning goals. Get started now
-            and explore the endless possibilities of AI-generated math
-            variations!
+            Whether you&rsquo;re a teacher looking to provide extra exercises
+            for your students or a student seeking more practice problems,
+            ExercAIsor is here to assist you in achieving your learning goals.
+            Get started now and explore the endless possibilities of
+            AI-generated math variations!
           </p>
         </div>
       </div>
