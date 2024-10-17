@@ -14,7 +14,7 @@ export default function Home() {
 
         <div className="grid gap-8">
           {/* Generate Menu */}
-          <Link href="/generate">
+          {/* <Link href="/generate">
             <div className="bg-primary text-primary-foreground shadow-md rounded-lg p-6 max-w-sm w-full hover:bg-primary/80 transition transform hover:-translate-y-2 hover:scale-105 duration-300 ease-in-out">
               <h2 className="text-xl font-semibold mb-2">Generate</h2>
               <p className="text-secondary-foreground">
@@ -22,7 +22,7 @@ export default function Home() {
                 customized to your needs.
               </p>
             </div>
-          </Link>
+          </Link> */}
 
           {/* Variation Menu */}
           <Link href="/variation">
