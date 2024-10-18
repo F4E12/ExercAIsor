@@ -102,7 +102,7 @@ const SubscriptionPage = () => {
               </h3>
               <p className="text-secondary-foreground">
                 Get faster, priority access to our support team with Premium.
-                We'll be there when you need us.
+                We&rsquo;ll be there when you need us.
               </p>
             </div>
             <div className="bg-accent shadow-lg rounded-lg p-6 transition transform hover:-translate-y-2 hover:scale-105 duration-300 ease-in-out animate-fade-in-up delay-200">
