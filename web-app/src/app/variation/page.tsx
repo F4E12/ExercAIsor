@@ -67,7 +67,7 @@ export default function DuplicateCaseUI() {
   return (
     <div>
       <ParticleBackground />
-      <Navbar />
+      <Navbar Page="variation" />
       <div className="flex flex-col p-10 max-w-xl mx-auto z-10 text-foreground relative">
         {/* <BackButton /> */}
 

@@ -8,7 +8,7 @@ export default function About() {
   return (
     <div>
       <ParticleBackground />
-      <Navbar />
+      <Navbar Page="about" />
       <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white p-6">
         <div className="max-w-5xl text-center space-y-12 z-10">
           <h1 className="text-4xl font-bold mb-6 animate-fade-in-down">

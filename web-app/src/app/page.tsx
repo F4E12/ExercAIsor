@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import Navbar from "@/components/ui/navbar";
 import ParticleBackground from "@/components/ui/particles";
 import Link from "next/link";
@@ -8,7 +9,7 @@ export default function Home() {
   return (
     <div>
       <ParticleBackground />
-      <Navbar />
+      <Navbar Page="" />
       <div className="flex flex-col items-center mt-16 min-h-screen bg-black text-background z-10">
         <h1 className="text-4xl font-bold mb-8 z-20">
           Welcome to the ExercAIsor
@@ -34,6 +35,9 @@ export default function Home() {
                 Create a variation of your case, providing new names and numbers
                 to existing scenarios.
               </p>
+              <Button className="mt-4 transform hover:-translate-y-2 hover:scale-105 duration-300 ease-in-out">
+                Try Now
+              </Button>
             </div>
           </Link>
         </div>
