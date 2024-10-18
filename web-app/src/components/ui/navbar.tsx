@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="bg-black text-white shadow-md z-20 sticky top-0 w-full p-4 border-b-2 border-transparent">
+    <nav className="bg-black text-white shadow-md z-50 sticky top-0 w-full p-4 border-b-2 border-transparent">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="text-2xl font-bold hover:text-gray-300 transition duration-300">
@@ -21,7 +21,10 @@ export default function Navbar() {
           <div className="hover:text-gray-300 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
             <Link href="/about">About</Link>
           </div>
-          <div className="text-primary hover:text-primary/80 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+          <div className="text-primary hover:text-primary transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+            <Link href="/subscription">Subscription</Link>
+          </div>
+          <div className="text-gray-300 hover:text-primary/80 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
             <Link href="/login">Login</Link>
           </div>
         </div>

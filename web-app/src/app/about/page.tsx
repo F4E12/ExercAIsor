@@ -49,7 +49,7 @@ export default function About() {
             </div>
 
             {/* Step 3 */}
-            <div className="bg-secondary text-secondary-foreground shadow-lg rounded-lg p-6 hover:bg-secondary/80 transition transform hover:-translate-y-2 hover:scale-105 duration-300 ease-in-out animate-fade-in-up delay-200">
+            <div className="bg-secondary text-accent-foreground shadow-lg rounded-lg p-6 hover:bg-secondary/80 transition transform hover:-translate-y-2 hover:scale-105 duration-300 ease-in-out animate-fade-in-up delay-200">
               <h3 className="text-xl font-semibold mb-2">
                 Step 3: Generate Variations
               </h3>
@@ -83,7 +83,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-primary text-secondary-foreground shadow-lg rounded-lg p-6 hover:bg-primary/80 transition transform hover:-translate-y-2 hover:scale-105 duration-300 ease-in-out animate-fade-in-up delay-500">
+            <div className="bg-primary text-accent-foreground shadow-lg rounded-lg p-6 hover:bg-primary/80 transition transform hover:-translate-y-2 hover:scale-105 duration-300 ease-in-out animate-fade-in-up delay-500">
               <h3 className="text-xl font-semibold mb-2">
                 AI-Powered Efficiency
               </h3>
