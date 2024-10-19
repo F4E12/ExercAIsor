@@ -18,15 +18,15 @@ export default function DuplicateCaseUI() {
   const generateVariations = async (inputCase: string): Promise<string[]> => {
     try {
       const response = await fetch(
-        "https://4ac7-34-125-77-108.ngrok-free.app/generate",
+        "https://0307-34-173-158-33.ngrok-free.app/generate",
         {
           // Change to ngrok public URL
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "ngrok-skip-browser-warning": "true", // Bypass ngrok browser warning
+            "ngrok-skip-browser-warning": "true",
           },
-          body: JSON.stringify({ prompt: inputCase }), // Send the input case to Flask API
+          body: JSON.stringify({ prompt: inputCase }),
         }
       );
 
