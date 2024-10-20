@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/components/ui/footer";
 import Navbar from "@/components/ui/navbar";
 import ParticleBackground from "@/components/ui/particles";
 import React from "react";
@@ -102,7 +103,7 @@ const SubscriptionPage = () => {
               </h3>
               <p className="text-secondary-foreground">
                 Get faster, priority access to our support team with Premium.
-                We&rsquo;ll be there when you need us.
+                We&apos;ll be there when you need us.
               </p>
             </div>
             <div className="bg-accent shadow-lg rounded-lg p-6 transition transform hover:-translate-y-2 hover:scale-105 duration-300 ease-in-out animate-fade-in-up delay-200">
@@ -117,6 +118,7 @@ const SubscriptionPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -10,7 +10,6 @@ const LoginPage = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Add your login logic here
     console.log("Email:", email);
     console.log("Password:", password);
   };
@@ -59,7 +58,7 @@ const LoginPage = () => {
           </form>
 
           <p className="text-center mt-4">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <a href="/register" className="text-primary font-semibold">
               Register here
             </a>

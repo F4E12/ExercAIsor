@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import Footer from "@/components/ui/footer";
 import Navbar from "@/components/ui/navbar";
 import ParticleBackground from "@/components/ui/particles";
 import Link from "next/link";
@@ -47,7 +48,7 @@ export default function Home() {
             ExercAIsor is an AI-powered platform designed to help you create
             custom math problem variations. Using a fine-tuned GEMMA model, you
             can input a simple math problem, and the AI will generate new
-            variations with different numbers and contexts. Whether you&rsquo;re
+            variations with different numbers and contexts. Whether you&apos;re
             a teacher or a student, ExercAIsor is here to provide endless
             possibilities for math exercises and practice.
           </p>
@@ -60,6 +61,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

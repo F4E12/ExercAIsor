@@ -16,7 +16,6 @@ const RegisterPage = () => {
       alert("Passwords do not match!");
       return;
     }
-    // Add your register logic here
     console.log("Name:", name);
     console.log("Email:", email);
     console.log("Password:", password);

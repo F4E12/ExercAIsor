@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import Footer from "@/components/ui/footer";
 import Navbar from "@/components/ui/navbar";
 import ParticleBackground from "@/components/ui/particles";
 import { Textarea } from "@/components/ui/textarea";
@@ -126,6 +127,7 @@ export default function DuplicateCaseUI() {
           Print to PDF
         </Button>
       </div>
+      <Footer />
     </div>
   );
 }
