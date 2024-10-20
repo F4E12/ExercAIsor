@@ -12,7 +12,7 @@ import {
 export default function Generate() {
   return (
     <>
-      <Navbar />
+      <Navbar Page="" />
       <div className="p-10 max-w-lg mx-auto bg-background text-foreground">
         {/* <BackButton /> */}
 
