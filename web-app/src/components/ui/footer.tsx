@@ -5,10 +5,10 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white py-10 relative z-20">
       <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 animate-glow"></div>
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6 sm:px-0">
         <div className="flex flex-col items-start">
-          <h2 className="text-2xl font-bold mb-4">ExercAIsor</h2>
-          <p className="text-gray-400">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">ExercAIsor</h2>
+          <p className="text-sm sm:text-base text-gray-400">
             ExercAIsor is your AI-powered solution to generating math problem
             variations. Helping teachers and students enhance learning through
             customized exercises.
@@ -16,7 +16,7 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col">
-          <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+          <h3 className="text-lg sm:text-xl font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 ml-2">
             <li>
               <Link href="/about">
@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col">
-          <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
+          <h3 className="text-lg sm:text-xl font-semibold mb-4">Follow Us</h3>
           <ul className="space-y-2 ml-2">
             <li className="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
               <a

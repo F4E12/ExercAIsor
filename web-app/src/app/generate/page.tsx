@@ -14,8 +14,6 @@ export default function Generate() {
     <>
       <Navbar Page="" />
       <div className="p-10 max-w-lg mx-auto bg-background text-foreground">
-        {/* <BackButton /> */}
-
         {/* Subject Dropdown */}
         <div className="mb-4">
           <label className="block text-sm font-medium text-secondary-foreground">

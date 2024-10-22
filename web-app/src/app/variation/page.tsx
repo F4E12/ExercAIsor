@@ -72,7 +72,7 @@ export default function DuplicateCaseUI() {
     <div>
       <ParticleBackground />
       <Navbar Page="variation" />
-      <div className="flex flex-col p-10 max-w-xl mx-auto z-10 text-foreground relative">
+      <div className="flex flex-col p-10 max-w-xl mx-auto z-10 text-foreground relative min-h-screen">
         {/* <BackButton /> */}
 
         {/* Input Case */}

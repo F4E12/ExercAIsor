@@ -11,7 +11,7 @@ const PrintContent = () => {
   const cases = searchParams.get("cases");
   const [generatedCases, setGeneratedCases] = useState<string[]>([]);
   const contentRef = useRef<HTMLDivElement>(null);
-  // Parse the cases passed through the query parameter
+
   useEffect(() => {
     if (cases) {
       try {
@@ -23,7 +23,6 @@ const PrintContent = () => {
     }
   }, [cases]);
 
-  // Automatically trigger print when the page loads
   const handlePrint = useReactToPrint({
     documentTitle: "Generated Math Problem Variations",
     contentRef,
@@ -31,7 +30,7 @@ const PrintContent = () => {
 
   useEffect(() => {
     if (generatedCases.length > 0) {
-      handlePrint(); // Automatically trigger print when cases are loaded
+      handlePrint();
     }
   }, [generatedCases, handlePrint]);
 

@@ -15,12 +15,14 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="">
+    <div className="relative min-h-screen">
       <ParticleBackground />
       <Navbar Page="login" />
-      <div className="min-h-screen relative flex items-center justify-center z-20">
-        <div className="bg-white p-8 rounded-lg shadow-md max-w-md w-full">
-          <h2 className="text-3xl font-bold mb-6 text-center">Login</h2>
+      <div className="min-h-screen relative flex items-center justify-center z-20 px-4 sm:px-0">
+        <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg max-w-sm sm:max-w-md w-full">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
+            Login
+          </h2>
           <form onSubmit={handleLogin}>
             {/* Email Input */}
             <div className="mb-4">
