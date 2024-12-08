@@ -5,9 +5,9 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-10 relative z-20">
+    <footer className="bg-black text-white py-10 relative z-20 ">
       <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 animate-glow"></div>
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6 sm:px-0">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6 sm:px-0 sm:pl-10 xl:pl-20">
         <div className="flex flex-col items-start">
           <h2 className="text-xl sm:text-2xl font-bold mb-4">ExercAIsor</h2>
           <p className="text-sm sm:text-base text-gray-400">
