@@ -5,19 +5,24 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-10 relative z-20">
+    <footer className="bg-black text-white py-10 relative z-20 ">
       <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 animate-glow"></div>
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6 sm:px-0">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6 sm:px-0 sm:pl-10 xl:pl-20">
         <div className="flex flex-col items-start">
           <h2 className="text-xl sm:text-2xl font-bold mb-4">ExercAIsor</h2>
-          <p className="text-sm sm:text-base text-gray-400">
-            ExercAIsor is your AI-powered solution to generating math problem
-            variations. Helping teachers and students enhance learning through
+          <p className="text-sm sm:text-base text-gray-4">
+            Your AI-powered solution to generating math problem
+            variations. Helping teachers, parents, and students enhance learning through
             customized exercises.
+
+            {/* ExercAIsor is your AI-powered solution to generating math problem
+            variations. Helping teachers and students enhance learning through
+            customized exercises. ini text sebelomnya*/}
           </p>
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col pl-20">
+          {/* previously gak ada pl */}
           <h3 className="text-lg sm:text-xl font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 ml-2">
             <li>
