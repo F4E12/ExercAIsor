@@ -19,7 +19,7 @@ export default function DuplicateCaseUI() {
   const generateVariations = async (inputCase: string): Promise<string[]> => {
     try {
       const response = await fetch(
-        "https://2d00-34-171-190-123.ngrok-free.app/generate",
+        "https://3c35-35-230-97-92.ngrok-free.app/generate",
         {
           // Change to ngrok public URL
           method: "POST",
