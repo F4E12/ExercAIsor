@@ -21,7 +21,8 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col pl-20">
+          {/* previously gak ada pl */}
           <h3 className="text-lg sm:text-xl font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 ml-2">
             <li>
