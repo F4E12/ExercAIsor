@@ -15,21 +15,17 @@ export default function DuplicateCaseUI() {
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
-  // Generate variations by calling the Flask API
   const generateVariations = async (inputCase: string): Promise<string[]> => {
+    const apiLink = "https://150c-34-45-9-230.ngrok-free.app"; // CHANGE LINK HERE
     try {
-      const response = await fetch(
-        "https://3c35-35-230-97-92.ngrok-free.app/generate",
-        {
-          // Change to ngrok public URL
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "ngrok-skip-browser-warning": "true",
-          },
-          body: JSON.stringify({ prompt: inputCase }),
-        }
-      );
+      const response = await fetch(apiLink + "/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "ngrok-skip-browser-warning": "true",
+        },
+        body: JSON.stringify({ prompt: inputCase }),
+      });
 
       if (!response.ok) {
         throw new Error("Failed to fetch variations");
@@ -43,10 +39,9 @@ export default function DuplicateCaseUI() {
     }
   };
 
-  // Handle the "Generate" button click
   const handleGenerate = async () => {
     setIsLoading(true);
-    setError(null); // Reset error before making the API call
+    setError(null);
     try {
       const newCases = await generateVariations(inputCase);
       console.log(newCases);
