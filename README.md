@@ -5,7 +5,7 @@ Follow these steps to set up and run the project locally:
 1. **Clone the Repository**  
    Use the following command to clone this repository:  
    ```
-   git clone <repository-url>
+   git clone [<repository-url>](https://github.com/F4E12/ExercAIsor.git)
    ```
 
 2. **Navigate to the Web Application Directory**  
